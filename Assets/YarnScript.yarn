@@ -1,0 +1,41 @@
+title: Start
+position: -104,-144
+---
+<<declare $spoonCount to 0>>
+<<set $spoonCount to 10>>
+<<declare $sceneCount to 0>>
+<<set $sceneCount to 1>>
+<<declare $characterCount to 0>>
+<<set $characterCount to 0>>
+
+Старт
+-> Я не хочу ничего знать
+    <<set $spoonCount to 10>>
+-> Карасик, серьезно?
+    <<set $spoonCount to 1>>
+
+В любом случае, пора работать!
+
+<<if $spoonCount == 1>>
+    <<jump Node>>
+<<else>>
+    <<jump Node1>>
+<<endif>>
+===
+title: Node
+position: 73,62
+---
+<<set $sceneCount to 0>>
+<<set $characterCount to 1>>
+Пробная новая нода, что же я буду делать, что же я буду делать.
+-> Я не Карасик!
+===
+title: Node1
+position: 152,-207
+---
+<<set $sceneCount to 0>>
+<<set $characterCount to 2>>
+А это другая новая пробная нода, ты сделал правильный выбор!
+Это великолепная концовка, самая чудесная!
+-> Оставь меня в покое, боже.
+===
