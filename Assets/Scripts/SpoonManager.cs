@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using Yarn;
 using Yarn.Unity;
 
 public class SpoonManager : MonoBehaviour
@@ -11,7 +10,7 @@ public class SpoonManager : MonoBehaviour
     public GameObject spoon;
     public List<GameObject> spoons;
     private GameObject newSpoon;
-    float spoonCount;
+    public float spoonCount;
     private VariableStorageBehaviour variableStorage;
 
     void Awake()
@@ -23,15 +22,12 @@ public class SpoonManager : MonoBehaviour
     {
         bool test;
         test = variableStorage.TryGetValue<float>("$spoonCount", out float spoonCount);
-        Debug.Log(test + "func result");
-        Debug.Log(spoonCount + " start");
-        generateSpoons();        
+        generateSpoons();
     }
     // Update is called once per frame
     void Update()
     {
         variableStorage.TryGetValue("$spoonCount", out spoonCount);
-        Debug.Log(spoonCount);
         foreach (GameObject obj in spoons)
         {
             Destroy(obj);
@@ -49,4 +45,5 @@ public class SpoonManager : MonoBehaviour
             spoons.Add(newSpoon);
         }
     }
+    
 }
