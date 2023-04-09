@@ -4,38 +4,52 @@ position: -104,-144
 <<declare $spoonCount to 0>>
 <<set $spoonCount to 10>>
 <<declare $sceneCount to 0>>
-<<set $sceneCount to 1>>
+<<set $sceneCount to 0>>
 <<declare $characterCount to 0>>
 <<set $characterCount to 0>>
+<<declare $embarassment to 1>>
+<<set $embarassment to 0>>
 
-Старт
--> Я не хочу ничего знать
-    <<set $spoonCount to 10>>
--> Карасик, серьезно?
-    <<set $spoonCount to 1>>
-
-В любом случае, пора работать!
-
-<<if $spoonCount == 1>>
-    <<jump Node>>
-<<else>>
-    <<jump Node1>>
-<<endif>>
+Kiel is at work sitting through his pants. He is bored and devastated. Kiel has another 3 hours till going home, some not very urgent task to do. He is sick-sickening bored. It is exhausting just to look at him.
+Boss is coming! Kiel needs to make an impression of a hard worker! RIGHT NOW.
+-> Don't blink and type some bullshit, button pusher. Busy people are constantly typing something.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<set $embarassment to 1>>
+-> Put your hand under the chin. You're philosopher, Kiel, think!
+    <<set $spoonCount to $spoonCount - 1>>
+    <<set $embarassment to 1>>
+-> Actually do something useful, faggot.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<set $embarassment to 1>>
+-> Just be yourself, nobody cares.
+-> Do I need to do something, or do I not? Actually nobody expects me to finish that anyway.
+    <<jump NoChillNode>>
+<<jump BossNode>>
 ===
-title: Node
-position: 73,62
+title: NoChillNode
+position: 11,-341
 ---
-<<set $sceneCount to 0>>
+I have no right to chill. 
+I shall chill no more.
+I said NO MORE!
+<<set $spoonCount to $spoonCount - 1>>
+<<set $embarassment to 1>>
+<<jump BossNode>>
+===
+title: BossNode
+position: 375,-236
+---
 <<set $characterCount to 1>>
-Пробная новая нода, что же я буду делать, что же я буду делать.
--> Я не Карасик!
+Hi, Kiel! How is it going? What's the status?
+-> It's great. I'm working really hard on it, trying to deliver it by tomorrow morning.
+Good, good, Kiel, I appreciate that. Looking forward to seeing your results.
+-> Sure, Mr. Dandaleon, of course.
+Oh, well, I've got another call at 5. Gotta grab some coffee. Keep up the good work, chap!
+-> Thanks!
+    <<jump BossLeft>>    
 ===
-title: Node1
-position: 152,-207
+
+title: BossLeft
+position: 635,-237
 ---
-<<set $sceneCount to 0>>
-<<set $characterCount to 2>>
-А это другая новая пробная нода, ты сделал правильный выбор!
-Это великолепная концовка, самая чудесная!
--> Оставь меня в покое, боже.
 ===
