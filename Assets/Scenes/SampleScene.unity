@@ -155,7 +155,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1059,6 +1059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spoon: {fileID: 1403882091805960118, guid: 6a20b3bc3ae22294880f1701a3a3e2fe, type: 3}
   spoons: []
+  spoonCount: 0
 --- !u!114 &1761160194
 MonoBehaviour:
   m_ObjectHideFlags: 0

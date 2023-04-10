@@ -1,5 +1,5 @@
 title: Start
-position: -104,-144
+position: -249,-247
 ---
 <<declare $spoonCount to 0>>
 <<set $spoonCount to 10>>
@@ -9,6 +9,10 @@ position: -104,-144
 <<set $characterCount to 0>>
 <<declare $embarassment to 1>>
 <<set $embarassment to 0>>
+<<declare $backgroundCount to 0>>
+<<set $backgroundCount to 0>>
+<<declare $forestCount to 0>>
+<<set $forestCount to 0>>
 
 Kiel is at work sitting through his pants. He is bored and devastated. Kiel has another 3 hours till going home, some not very urgent task to do. He is sick-sickening bored. It is exhausting just to look at him.
 Boss is coming! Kiel needs to make an impression of a hard worker! RIGHT NOW.
@@ -52,4 +56,80 @@ Oh, well, I've got another call at 5. Gotta grab some coffee. Keep up the good w
 title: BossLeft
 position: 635,-237
 ---
+<<set $characterCount to 0>>
+I did fucking nothing for a whole day.
+Yesterday too. Day before that too.
+What am I supposed to do now? Am I sane? Why can't I do that already?
+I hate myself so much. No, I don't. I want to disappear somewhere, so nobody will ever find me.
+-> Stop thought flood.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<jump FocusNode>>
+-> Continue.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<jump SelfDestructionNode>>
+===
+title: SelfDestructionNode
+position: 921,-121
+---
+I am a disgusting, despicable creature, and there is nothing I could do, nothing I could achieve, nothing I could do in time. 
+<<set $spoonCount to $spoonCount - 1>>
+I break promises, and I am no pleasantrie, talk too much, talk too little, too stupid. Why do I care? Nobody notices that anyway.
+Everyone is irritated with me. They will know, and they will find out who I really am. They will at some point.
+<<set $spoonCount to $spoonCount - 1>>
+I need to stop.
+-> Stop.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<jump FocusNode>>
+-> Continue.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<jump WalkNode>>
+===
+title: WalkNode
+position: 1206,-117
+---
+I am exhausted; there is nothing I can do.
+<<set $backgroundCount to 1>>
+Let's go for walk, may be it will get better.
+<<jump DirectionNode>>
+===
+title: DirectionNode
+position: 1436,31
+---
+-> Turn left.
+    <<jump LeftNode>>
+-> Turn right.
+    <<jump RightNode>>
+===
+
+title: LeftNode
+position: 1701,-141
+---
+<<if $forestCount == 0>>
+    Is this really happening to me?
+    <<jump RightNode>>
+<<endif>>
+<<if $forestCount == 2>>
+    Am I still sane...
+    <<jump DirectionNode>>
+<<endif>>
+<<if $forestCount == 1>>
+    Will I be forever lost in this eternal torture.
+    <<jump RightNode>>
+<<else>>
+    That's it. Let's return to the office.
+    <<jump FocusNode>>
+<<endif>>
+===
+title: RightNode
+position: 1727,38
+---
+...
+<<set $backgroundCount to 2>>
+<<set $forestCount to $forestCount + 1>>
+<<jump DirectionNode>>
+===
+title: FocusNode
+position: 917,-394
+---
+
 ===
