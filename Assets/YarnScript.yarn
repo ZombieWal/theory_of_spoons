@@ -13,9 +13,20 @@ position: -249,-247
 <<set $backgroundCount to 0>>
 <<declare $forestCount to 0>>
 <<set $forestCount to 0>>
+<<declare $someBullshit to 0>>
+<<set $someBullshit to 0>>
+<<declare $bossSuspicion to 0>>
+<<set $bossSuspicion to 0>>
+<<declare $doItCount to 0>>
+<<set $doItCount to 1>>
 
-Kiel is at work sitting through his pants. He is bored and devastated. Kiel has another 3 hours till going home, some not very urgent task to do. He is sick-sickening bored. It is exhausting just to look at him.
-Boss is coming! Kiel needs to make an impression of a hard worker! RIGHT NOW.
+I am Kiel, I suppose.
+I am at work sitting through my pants.
+Kiel is bored and devastated.
+Kiel has another 3 hours till going home, some not very urgent task to do.
+I am sick-sickening bored. It is exhausting just to look at me.
+Boss is coming! Kiel needs to make an impression of a hard worker!
+RIGHT NOW.
 -> Don't blink and type some bullshit, button pusher. Busy people are constantly typing something.
     <<set $spoonCount to $spoonCount - 1>>
     <<set $embarassment to 1>>
@@ -35,7 +46,7 @@ position: 11,-341
 ---
 I have no right to chill. 
 I shall chill no more.
-I said NO MORE!
+Kiel said NO MORE!
 <<set $spoonCount to $spoonCount - 1>>
 <<set $embarassment to 1>>
 <<jump BossNode>>
@@ -45,12 +56,25 @@ position: 375,-236
 ---
 <<set $characterCount to 1>>
 Hi, Kiel! How is it going? What's the status?
+<<if $embarassment == 0>>
 -> It's great. I'm working really hard on it, trying to deliver it by tomorrow morning.
 Good, good, Kiel, I appreciate that. Looking forward to seeing your results.
 -> Sure, Mr. Dandaleon, of course.
 Oh, well, I've got another call at 5. Gotta grab some coffee. Keep up the good work, chap!
 -> Thanks!
-    <<jump BossLeft>>    
+    <<jump BossLeft>>  
+<<endif>>
+-> Aah, weeeell, it is okay, I think.
+Okay? Are you sure, Kiel? Maybe you need some help?
+-> No-no-no, of course, it's fine, Mr.Dandaleon, it's fine.
+Are you sure?
+-> Absolutely!
+Well, let's discuss your task tomorrow morning than, I guess.
+-> Sure, Mr. Dandaleon.
+See you, Kiel.
+<<set $bossSuspicion to 1>>
+-> nodded.
+    <<jump BossLeft>>  
 ===
 
 title: BossLeft
@@ -102,7 +126,7 @@ position: 1436,31
 ===
 
 title: LeftNode
-position: 1701,-141
+position: 1762,-133
 ---
 <<if $forestCount == 0>>
     Is this really happening to me?
@@ -121,7 +145,7 @@ position: 1701,-141
 <<endif>>
 ===
 title: RightNode
-position: 1727,38
+position: 1762,41
 ---
 ...
 <<set $backgroundCount to 2>>
@@ -131,5 +155,89 @@ position: 1727,38
 title: FocusNode
 position: 917,-394
 ---
+Okay, let's try to focus on what we have here.
+Focus.
+F O C U S
+<<jump WhatToDoNode>>
+===
+title: WhatToDoNode
+position: 916,-577
+---
 
+What I actually need to do?
+<<if $someBullshit == 0>>
+    -> Some pointless bullshit
+        <<jump NeedNoMoneyNode>>
+    -> Very complicated bullshit
+        <<jump DivisionNode>>
+    -> Easy bullshit, let's do it later.
+        <<jump BushNode>>
+    -> Existential bullshit.
+        <<set $spoonCount to $spoonCount - 1>>
+        <<jump BushNode>> 
+<<endif>>
+-> Very complicated bullshit
+    <<jump DivisionNode>>
+-> Easy bullshit, let's do it later.
+    <<jump BushNode>>
+-> Existential bullshit.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<jump BushNode>>
+===
+title: NeedNoMoneyNode
+position: 1140,-794
+---
+Do I need money that much, do I?
+Will I still have some self-respect if I get fired? 
+Will I?
+<<set $someBullshit to 1>>
+<<jump WhatToDoNode>>
+===
+title: BushNode
+position: 1332,-437
+---
+Beat around the bush around till the end of the working day.
+<<jump GoHomeNode>>
+===
+title: DivisionNode
+position: 1337,-611
+---
+Could we divide it into parts, Kiel? Could we?
+-> Yes, we could, Kiel is competent, competent. We will do this!
+    <<jump JustDoItNode>>
+-> No, we could not, Kiel. I could not.
+    <<jump BadTurnNode>>
+===
+title: BadTurnNode
+position: 1663,-703
+---
+-> Fuck this shit. I will think about that tomorrow.
+    <<jump BushNode>>
+-> Oh my god, they will know.
+    <<jump TheyWillKnowNode>>
+===
+title: TheyWillKnowNode
+position: 1987,-702
+---
+They all will know.
+This is so unnerving.
+Everyone will know how stupid, selfish, and embarrassing I am.
+How incompetent.
+They will know everything.
+They will laugh at me like insane. 
+Like insane.
+<<set $spoonCount to $spoonCount - 1>>
+<<set $doItCount to 0>>
+<<jump JustDoItNode>>
+===
+title: JustDoItNode
+position: 1660,-550
+---
+<<if $doItCount == 1>>
+-> Actually do your job.
+    <<set $spoonCount to $spoonCount + 1>>
+    <<jump WorkNode>>
+<< endif>>
+-> Yeah, Kiel will do it. He will, he definitely will.
+    <<jump BushNode>>
 ===
