@@ -103,9 +103,15 @@ Everyone is irritated with me. They will know, and they will find out who I real
 I need to stop.
 -> Stop.
     <<set $spoonCount to $spoonCount - 1>>
+    <<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+    <<endif>>
     <<jump FocusNode>>
 -> Continue.
     <<set $spoonCount to $spoonCount - 1>>
+    <<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+    <<endif>>
     <<jump WalkNode>>
 ===
 title: WalkNode
@@ -174,6 +180,9 @@ What I actually need to do?
         <<jump BushNode>>
     -> Existential bullshit.
         <<set $spoonCount to $spoonCount - 1>>
+        <<if $spoonCount == 0>>
+        <<jump MentalBreakdownNode>>
+        <<endif>>
         <<jump BushNode>> 
 <<endif>>
 -> Very complicated bullshit
@@ -182,6 +191,9 @@ What I actually need to do?
     <<jump BushNode>>
 -> Existential bullshit.
     <<set $spoonCount to $spoonCount - 1>>
+    <<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+    <<endif>>
     <<jump BushNode>>
 ===
 title: NeedNoMoneyNode
@@ -227,6 +239,9 @@ They will know everything.
 They will laugh at me like insane. 
 Like insane.
 <<set $spoonCount to $spoonCount - 1>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
 <<set $doItCount to 0>>
 <<jump JustDoItNode>>
 ===
@@ -240,4 +255,88 @@ position: 1660,-550
 << endif>>
 -> Yeah, Kiel will do it. He will, he definitely will.
     <<jump BushNode>>
+===
+title: WorkNode
+position: 1981,-556
+---
+Kiel is not available right now, dear player.
+You know, he is actually working. 
+Stuff happens, work, for example.
+Work, work, work.
+<<jump GoHomeNode>>
+===
+
+title: GoHomeNode
+position: 2232,-416
+---
+It is time. Time to go home, Kiel, time to go home.
+<<if $spoonCount>1>>
+    Bye, guys! Have a nice evening!
+<<else>>
+    Leave in silence. 
+    I am too tired for courtesy.
+<<endif>>
+<<set $backgroundCount to 3>>
+My head is despicably heavy and empty.
+What should I do?
+<<if $spoonCount > 2>>
+    -> Call Mom while walking home.
+        <<jump MomNode>>
+    -> Go straight home.
+        <<jump EveningNode>>
+<<endif>>
+<<if $spoonCount < 2 && $spoonCount > 0>>
+    -> Go straight home.
+        <<set $backgroundCount to 4>>
+        -> Go to sleep.
+            <<jump NewDayNode>>
+<<endif>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+===
+title: MentalBreakdownNode
+position: 2481,-417
+---
+<<set $backgroundCount to 5>>
+Despite his best efforts, Kiel struggles to stay afloat amidst the turmoil. 
+Kiel is lost and desperate.
+Overwhelmed by the weight of his struggles, Kiel experiences a mental breakdown.
+It leaves Kiel unable to continue his journey.
+That's the end of the game.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
+===
+title: MomNode
+position: 2441,-652
+---
+Trr. Trr.
+<<set $characterCount to 2>>
+Hi, Kielie!
+->Hi, Mom!
+How are you doing, son?
+-> I am good, good, trying to...
+It is good to hear, son. You're a champion, son. Have you heard about Pralind?
+-> No, I don't. What's with Pralind?
+It is a total disaster! Pralind is in a cult!
+-> How did you know that?
+His mother hired very famous private eye. Very expensive one, by the way, and he followed Pralind to his pilates classes.
+-> So, he was stalking Pralind, isn't he?
+No-no, he was INVESTIGATING, it is a completely different thing. Where did I stop, so, Praling is going to pilates classes?
+-> So?
+SO?! You know these pilates teachers, they are all out of their mind! That's definetely a cult.
+-> Yeah, I know.
+That's what I am talking about! It is a cult, it is definetely a cult!
+-> Aha.
+Poor Magdalena, such a horror to watch your child dragged into slavery. Pralind has no freedom anymore, he has to obey this despicable pilates leader to survive!
+-> Poor Magdalena.
+Oh, I'm getting so dissapointed. Let's switch to something else, boy.
+-> Sure, I was trying to say that...
+Oh, Kiel, did you hear about these protests? Idiots, what are they doing! Why aren't they sitting at home!
+-> Idiots, yeah.
+And their leader? Someone mu
+
 ===
