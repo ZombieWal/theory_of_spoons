@@ -1,4 +1,4 @@
-title: Start
+ title: Start
 position: -249,-247
 ---
 <<declare $spoonCount to 0>>
@@ -337,6 +337,32 @@ Oh, I'm getting so dissapointed. Let's switch to something else, boy.
 -> Sure, I was trying to say that...
 Oh, Kiel, did you hear about these protests? Idiots, what are they doing! Why aren't they sitting at home!
 -> Idiots, yeah.
-And their leader? Someone mu
-
+And their leader? Someone must hang him on the square!
+->...
+Anyway, the weather is so-so terrible, you know.
+-> Ooh.
+This winter is disgusting. It's melting and freezing, and melting and freezing again.
+-> Aha.
+I can't remember in my whole life such a disgusting February.
+-> Yes, me neither.
+How is your work? Are you winning, son?
+-> Good, all's fine, ma.
+Good, but are you progressing, son? Are you striving to be better than you were yesterday?
+-> Sure, ma, of course. I was just thinking...
+Oh, my back hurts again. I'm so old and so tired of being old. Oooh.
+-> Oh, maybe you will visit a doctor, ma?
+No-no-no, I am too busy for that, son.
+-> But...
+Oh, it's not that bad, not that bad. Oooh.
+-> Okay, ma. Well, I'm almost home, that's it then.
+Okay, son, sure, don't forget to call me! Bye-bye!
+-> I won't, I promise. Bye!
+Kiel exhales.
+<<set $spoonCount to $spoonCount-2>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+<<set $backgroundCount to 4>>
+Go straight to sleep.
+<<jump NewDayNode>>
 ===
