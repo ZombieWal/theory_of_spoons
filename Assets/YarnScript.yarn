@@ -267,7 +267,7 @@ Work, work, work.
 ===
 
 title: GoHomeNode
-position: 2232,-416
+position: 2206,-303
 ---
 It is time. Time to go home, Kiel, time to go home.
 <<if $spoonCount>1>>
@@ -296,7 +296,7 @@ What should I do?
 <<endif>>
 ===
 title: MentalBreakdownNode
-position: 2481,-417
+position: 2564,-409
 ---
 <<set $backgroundCount to 5>>
 Despite his best efforts, Kiel struggles to stay afloat amidst the turmoil. 
@@ -311,7 +311,7 @@ Play again?
         -> Bye-bye!
 ===
 title: MomNode
-position: 2441,-652
+position: 2564,-629
 ---
 Trr. Trr.
 <<set $characterCount to 2>>
@@ -357,6 +357,7 @@ Oh, it's not that bad, not that bad. Oooh.
 -> Okay, ma. Well, I'm almost home, that's it then.
 Okay, son, sure, don't forget to call me! Bye-bye!
 -> I won't, I promise. Bye!
+<<set $characterCount to 0>>
 Kiel exhales.
 <<set $spoonCount to $spoonCount-2>>
 <<if $spoonCount == 0>>
@@ -365,4 +366,57 @@ Kiel exhales.
 <<set $backgroundCount to 4>>
 Go straight to sleep.
 <<jump NewDayNode>>
+===
+title: EveningNode
+position: 2565,-250
+---
+<<set $backgroundCount to 4>>
+Kiel trudged wearily towards his home after a long day.
+Well, I should feel somewhat of satisfaction, I think.
+Should I?
+I heat some food left from the weekend.
+Devoured it fast. It's hot but tasteless.
+Or maybe Kiel can't feel it.
+Pour some tea in the last clean cup.
+Plop down into the chair by the computer.
+<<set $backgroundCount to 5>>
+Again this noise. Too much dust inside.
+Oh, that's Millie's writing again. Should I answer her?
+-> Greet her, at least.
+    <<jump ChatNode>>
+-> No-no-no.
+    <<jump ForeverAloneNode>>
+=== 
+title: ForeverAloneNode
+position: 2850,-410
+---
+It's all so mundane. Really?
+I don't even like her.
+Why should I talk to her?
+Better get some sleep.
+<<set $backgroundCount to 4>>
+Bed awaits me, here I come!
+<<jump NewDayNode>>
+===
+title: ChatNode
+position: 2840,-256
+---
+Let's focus aaand write to her...
+-> Hi, Millie! I'm fine, thanks, how are you?
+<<set $characterCount to 3>>
+Ha-ha, you're here. I'm good, thanks, just finished working on another page.
+-> Oh, you continue your comic?
+Yes, there is five pages left for inking and my first single is finished! Could you believe?
+-> Ha, that sound wonderful.
+I really liked to brainstorm its plot with you, thank you so much for that!
+-> Heh, I liked that too, that was nice to think on something more creative, you know.
+Yeah, would you like to take a look on the last page?
+-> Yeah, sure
+<<set $backgroundCount to 6>>
+It was your idea to draw this pages as a monster, remember. Here's your sketch.
+-> Yeah, I do. Heh, you reworked it so much.
+But the original idea is yours.
+-> Your page is very nice, I like it!
+Thanks!
+<<set $backgroundCount to 5>>
 ===
