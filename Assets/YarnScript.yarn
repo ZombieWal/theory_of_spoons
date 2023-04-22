@@ -19,6 +19,8 @@ position: -249,-247
 <<set $bossSuspicion to 0>>
 <<declare $doItCount to 0>>
 <<set $doItCount to 1>>
+<<declare $anxietyCount to 0>>
+<<set $anxietyCount to 0>>
 
 I am Kiel, I suppose.
 I am at work sitting through my pants.
@@ -388,7 +390,7 @@ Oh, that's Millie's writing again. Should I answer her?
     <<jump ForeverAloneNode>>
 === 
 title: ForeverAloneNode
-position: 2850,-410
+position: 2843,-412
 ---
 It's all so mundane. Really?
 I don't even like her.
@@ -419,4 +421,126 @@ But the original idea is yours.
 -> Your page is very nice, I like it!
 Thanks!
 <<set $backgroundCount to 5>>
+-> Hey, you know, I was reading about one movie.
+    <<jump CourageNode>>
+-> Hey, you know I've got some work to do tomorrow. Let's chat again sometime.
+    Sure, why not, good night!
+    -> Good night.
+<<jump NewDayNode>>
+===
+
+title: CourageNode
+position: 2844,-589
+---
+Hmm.
+-> It's about a father-son journey in the memory of their mom.
+Ooh, it sounds sad in a way, isn't it?
+-> Yeah, but the setting is good, and the visuals are pledging.
+Yeah, just googled it. I suppose I know what you're talking about.
+-> So, I thought if you would like to join me to watch it.
+Yeah, why not, when?
+-> Saturday at 5, how's that?
+OK! Is it in Star Cinema?
+-> Oh, yeah, sure, exactly there.
+Okay, let's meet 10 min before, wanna grab some junk before the start.
+-> Yeah, sure. Ok, weell, I need to go to sleep now, got some work tomorrow.
+Sure, ok, see you on Saturday then.
+-> See you, good night.
+<<set $characterCount to 0>>
+<<set $backgroundCount to 4>>
+Kiel stands up.
+Have I really done that?
+What's wrong with me?
+Why don't I feel anything?
+Shouldn't I be nervous?
+Maybe should. I do not know.
+<<set $spoonCount to $spoonCount - 1>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+I need some sleep.
+<<jump NewDayNode>>
+===
+
+title: NewDayNode
+position: 3125,-420
+---
+<<set $spoonCount to 10>>
+<<set $backgroundCount to 7>>
+Well, that's a brand new day.
+What should I do?
+-> Let's go and wash properly.
+    <<set $backgroundCount to 8>>
+    I need to look well and proper today.
+    <<set $spoonCount to $spoonCount-1>>
+    Let's dress nicely.
+    Oh, I'm out of time, I need to go to work.
+    NOW.
+    <<set $spoonCount to $spoonCount-1>>
+    <<jump BusNode>>
+-> Let's brush teeth at least.
+    <<set $backgroundCount to 8>>
+    Let's put on something.
+    Hope it doesn't stink.
+    It's fine. Let's go.
+    <<jump BusNode>>
+-> Jut put on clothes and go.
+    Oh well, these clothes stink.
+    <<set $spoonCount to $spoonCount-1>>
+    Anyway, I need to go. NOW.
+    <<jump BusNode>>
+===
+
+title: BusNode
+position: 3398,-420
+---
+<<set $backgroundCount to 9>>
+Okay, here's my bus.
+That's fast, I'm lucky.
+<<set $backgroundCount to 10>>
+I should be on time.
+I hope so, at least.
+-> Get your shit together
+    <<set $spoonCount to $spoonCount - 1>>
+    Together, I said.
+    <<set $spoonCount to $spoonCount - 1>>
+    <<set $anxietyCount to $anxietyCount+1>>
+    <<jump BossConversationNode>>
+-> Okay, let's calm down.
+    How it was, this square breathing.
+    Exhale slowly.
+    Inhale, 1.
+    2.
+    3.
+    4.
+    Hold, 1.
+    2.
+    3.
+    4.
+    Exhale, 1.
+    2.
+    3.
+    4.
+    I CAN'T BREATHE.
+    AAAAAH.
+    <<set $spoonCount to $spoonCount-1>>
+    <<set $anxietyCount to $anxietyCount+1>>
+    <<jump BossConversationNode>>
+-> Just watch the street passing by the window.
+    -> Go to the rear window.
+        <<set $backgroundCount to 11>>
+        Oh, really. Did they actually shit all over under them.
+        <<set $characterCount to 4>>
+        Oh, man, don't go there. Just don't go!
+        <<set $characterCount to 5>>
+        Oh, man. My life is not that shitty after all.
+        <<jump BossConversationNode>>
+    -> Go to the back of the bus.
+        <<set $backgroundCount to 12>>
+        Why are they running away? What's going on?
+        <<set $characterCount to 6>>
+        O my god. Really? What the hell is wrong with him?
+        Will I be like that in 20 years?
+        That's enough of me.
+        <<jump BossConversationNode>>
 ===
