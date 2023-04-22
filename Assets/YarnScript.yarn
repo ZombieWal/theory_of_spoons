@@ -548,4 +548,5 @@ title: BossConversationNode
 position: 3683,-419
 ---
 <<set $backgroundCount to 0>>
+Perform check.
 ===
