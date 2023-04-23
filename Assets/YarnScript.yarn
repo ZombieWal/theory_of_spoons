@@ -21,6 +21,10 @@ position: -249,-247
 <<set $doItCount to 1>>
 <<declare $anxietyCount to 0>>
 <<set $anxietyCount to 0>>
+<<declare $bushCount to 0>>
+<<set $bushCount to 0>>
+<<declare $girlCount to 0>>
+<<declare $momCount to 0>>
 
 I am Kiel, I suppose.
 I am at work sitting through my pants.
@@ -211,6 +215,7 @@ title: BushNode
 position: 1332,-437
 ---
 Beat around the bush around till the end of the working day.
+<<set $bushCount to 1>>
 <<jump GoHomeNode>>
 ===
 title: DivisionNode
@@ -359,6 +364,7 @@ Oh, it's not that bad, not that bad. Oooh.
 -> Okay, ma. Well, I'm almost home, that's it then.
 Okay, son, sure, don't forget to call me! Bye-bye!
 -> I won't, I promise. Bye!
+<<set $momCount to 1>>
 <<set $characterCount to 0>>
 Kiel exhales.
 <<set $spoonCount to $spoonCount-2>>
@@ -426,6 +432,7 @@ Thanks!
 -> Hey, you know I've got some work to do tomorrow. Let's chat again sometime.
     Sure, why not, good night!
     -> Good night.
+    <<set $girlCount to 1>>
 <<jump NewDayNode>>
 ===
 
@@ -534,7 +541,7 @@ I hope so, at least.
         Oh, man, don't go there. Just don't go!
         <<set $characterCount to 5>>
         Oh, man. My life is not that shitty after all.
-        <<jump BossConversationNode>>
+        <<jump StartWorkNode>>
     -> Go to the back of the bus.
         <<set $backgroundCount to 12>>
         Why are they running away? What's going on?
@@ -542,11 +549,209 @@ I hope so, at least.
         O my god. Really? What the hell is wrong with him?
         Will I be like that in 20 years?
         That's enough of me.
-        <<jump BossConversationNode>>
+        <<jump StartWorkNode>>
 ===
-title: BossConversationNode
+title: StartWorkNode
 position: 3683,-419
 ---
 <<set $backgroundCount to 0>>
-Perform check.
+<<if $bushCount == 1>>
+    Let's look what we got here.
+    <<if $spoonCount < 5>>
+        <<jump PanicNode>>
+    <<endif>>
+    <<jump SecondFocusNode>>
+<<endif>>
+Oh, well. I did my job yesterday. Let's report it. 
+And, well, I need to head to the boss then, shall I?
+<<jump BossHereNode>>
+===
+
+title: SecondFocusNode
+position: 3942,-228
+---
+Let's try to divide it into smaller pieces.
+-> Actually do your work. FINALLY.
+    Kiel's working. And working.
+    And typing something.
+    And something changes on the screen.
+    Is all office work like that?
+    Kiel types again.
+    Screen has changed a bit again, if you look close enough.
+    But you won't, you shouldn't mess with Kiel while he works.
+    And now.
+    Kiel finishes.
+    <<jump BossHereNode>>
+-> No, I think I'm closer to a panic mode.
+    <<jump PanicNode>>
+===
+
+title: PanicNode
+position: 3946,-553
+---
+<<set $backgroundCount to 13>>
+I can't do it.
+<<set $spoonCount to $spoonCount-1>>
+I really can't.
+<<set $spoonCount to $spoonCount-1>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+That's a panic time!
+No-no-no, I shouldn't panic. It's just some work.
+It's not just some work. IT IS WORK.
+AND I AM NOT COMPETENT FOR THAT.
+<<set $spoonCount to $spoonCount-1>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+I CAN'T STAND IT NO MORE.
+-> Kiel, are you alright?
+<<set $characterCount to 1>>
+No, I am not, I am so sorry.
+-> That's alright. You may take a day off today.
+Oh, that's very kind of you, sir.
+Well, yes, I actually feel very ill.
+-> Okay, Kiel. Try to take a day off in advance next time. See you tomorrow.
+Thank you, sir. I will do better next time, I promise!
+-> Okay, Kiel, see you.
+<<set $characterCount to 0>>
+Kiel felt like shranked can.
+It's so embarassing, I feel so ashamed, so ashamed.
+Better go home now, really.
+<<if $momCount == 1>>
+    <<jump NoJobMomEndNode>>
+<<endif>>
+<<jump NothingEndNode>>
+===
+
+title: BossHereNode
+position: 4104,-399
+---
+<<set $characterCount to 1>>
+Hi, Kiel! How are you doing? Is the report ready?
+-> Sure, Mr. Dandaleon. Let's discuss it.
+<<set $characterCount to 0>>
+<<set $backgroundCount to 14>>
+Kiel presents his work.
+<<if $bossSuspicion == 1>>
+    Presentation wasn't one hundred percent smooth.
+    <<set $spoonCount to $spoonCount-1>>
+    <<if $spoonCount == 0>>
+        <<jump MentalBreakdownNode>>
+    <<endif>>
+    But, you know what, Kiel still did well.
+    He did the best he could at the moment.
+    Let's greet Kiel for that, dear player!
+    <<if $momCount == 1>>
+        <<jump WorkMomEndNode>>
+    <<endif>>
+    <<if $girlCount == 1>>
+        <<jump WorkGirlEndNode>>
+    <<endif>>
+    <<jump OnlyWorkEndNode>>
+<<endif>>
+It was good, it was really good.
+<<set $backgroundCount to 15>>
+Mr. Dandaleon is happy with Kiel's report.
+It is such a responsobility, isn't it?
+<<set $spoonCount to $spoonCount - 1>>
+<<if $spoonCount == 0>>
+    <<jump MentalBreakdownNode>>
+<<endif>>
+Kiel's promotion is almost here, believe me!
+<<if $momCount == 1>>
+    <<jump WorkMomEndNode>>
+<<endif>>
+<<if $girlCount == 1>>
+    <<jump WorkGirlEndNode>>
+<<endif>>
+<<jump OnlyWorkEndNode>>
+===
+title: WorkMomEndNode
+position: 4408,-563
+---
+<<set $backgroundCount to 16>>
+Motivated to turn his life around, Kiel focuses on improving his performance at work. 
+He takes on new responsibilities, stays late to complete tasks, and becomes a valuable team member. 
+His hard work pays off when he is promoted to a higher position, earning a better salary and the admiration of his colleagues.
+Throughout his professional growth, Kiel remains mindful of the importance of family. 
+He maintains regular contact with his mother, sharing his successes and seeking her advice. Their bond strengthens as they support and encourage each other through life's challenges.
+However, even with his career and family life thriving, Kiel still feels a void in his personal life. 
+He never musters the courage to ask Millie or any other girl out, and as a result, he remains single. 
+Despite this, Kiel finds contentment in his work achievements and close relationship with his mother, accepting that life may not always offer everything he desires.
+That's the end of the game.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
+===
+title: WorkGirlEndNode
+position: 4411,-427
+---
+<<set $backgroundCount to 17>>
+Determined to improve his life, Kiel dedicates himself to his work. He tackles new projects, puts in extra hours, and soon earns a promotion. 
+At the same time Kiel starts dating Millie.
+He supports her dreams in comics artist career and encourages her to pursue them relentlessly. 
+With Kiel's unwavering support, Millie's talent as a comic artist flourishes, and she soon gains fame within the industry.
+Kiel's depression takes over at some point, but Millie notices that and pursuides him to het some help.
+Kiel slowly recovers and continue working at his old position.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
+===
+title: OnlyWorkEndNode
+position: 4310,-208
+---
+<<set $backgroundCount to 18>>
+Driven by a desire for change, Kiel begins to dedicate himself to his work. 
+He puts in extra hours, takes on challenging projects, and quickly climbs the ranks. 
+His dedication does not go unnoticed, and he is soon promoted to a management position, earning a higher salary and the respect of his colleagues.
+However, in his pursuit of success, Kiel loses sight of the relationships that once mattered to him. 
+He becomes consumed with his work, failing to maintain contact with his mother and never finding the courage to ask Millie out.
+As the years pass, Kiel realizes that while he has achieved professional success, he has paid a heavy price in his personal life.
+Alone in his apartment, Kiel ponders the choices he has made.
+He wonders if it's too late to reconnect with his mother and if he'll ever find the courage to pursue love. 
+With a heavy heart, Kiel acknowledges that success at work is hollow without the warmth of family and love to share it with.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
+===
+title: NoJobMomEndNode
+position: 4665,-490
+---
+<<set $backgroundCount to 19>>
+As Kiel's depression impacts his life, his work performance suffers. Despite trying to improve, he finds it increasingly difficult to stay focused and motivated. 
+One day, a significant mistake at the important task costs Kiel his job, leaving him devastated and unsure of his future.
+In his time of need, Kiel reaches out to his mother for support. She provides a comforting presence, offering him encouragement and guidance as he faces this challenging period. 
+Their bond strengthens as Kiel realizes the importance of family in difficult times.
+While his dreams of a successful career and romance remain unfulfilled, Kiel finds strength and purpose in the love and support of his family.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
+===
+title: NothingEndNode
+position: 4660,-301
+---
+<<set $backgroundCount to 20>>
+As Kiel's depression takes a toll on his life, it begins to affect his performance at work.
+He struggles to stay focused and motivated, causing his productivity to decline.
+Despite his best efforts to improve, the weight of his depression proves to be too much to handle. 
+One day, Kiel makes a costly mistake, resulting in his dismissal from the job.
+Feeling lost and isolated, Kiel withdraws from the world around him. He avoids contact with his mother, not wanting to face her disappointment in him. 
+The distance between them grows, leaving Kiel more alone than ever. Additionally, he never musters the courage to ask Millie out, watching helplessly as she eventually finds happiness with someone else.
+Kiel's life becomes a series of missed opportunities and broken connections. 
+With his career in ruins, no contact with his mother, and no romantic prospects, he is left to confront the consequences of his actions and the weight of his unfulfilled dreams.
+Play again?
+    -> Yes.
+        <<jump Start>>
+    -> No.
+        -> Bye-bye!
 ===
