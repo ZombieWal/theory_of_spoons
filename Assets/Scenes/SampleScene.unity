@@ -405,8 +405,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 21300000, guid: 0f91f800840ae1d458e3a77d821fa22f, type: 3}
-  - {fileID: 21300000, guid: d9c632b9e07f3df4bbff68ccccf0a1d1, type: 3}
+  - {fileID: 21300000, guid: 7c95c9abc489c4709ba78ecacd5e2288, type: 3}
+  - {fileID: 21300000, guid: 54a10684f1739495d91858812c938782, type: 3}
+  - {fileID: 21300000, guid: 43bcbf8aa52f24dc68653dfcbc0afa87, type: 3}
+  - {fileID: 21300000, guid: ecc597bdcf6024719bffc1e800a15064, type: 3}
+  - {fileID: 21300000, guid: 14eb16a8c17c847d89dd34d0d755fdc7, type: 3}
+  - {fileID: 21300000, guid: ff18d671cf6314734bf8438801862a2c, type: 3}
 --- !u!114 &698880828
 MonoBehaviour:
   m_ObjectHideFlags: 0
