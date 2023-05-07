@@ -387,7 +387,7 @@ Devoured it fast. It's hot but tasteless.
 Or maybe Kiel can't feel it.
 Pour some tea in the last clean cup.
 Plop down into the chair by the computer.
-<<set $backgroundCount to 5>>
+<<set $backgroundCount to 6>>
 Again this noise. Too much dust inside.
 Oh, that's Millie's writing again. Should I answer her?
 -> Greet her, at least.
@@ -420,13 +420,13 @@ I really liked to brainstorm its plot with you, thank you so much for that!
 -> Heh, I liked that too, that was nice to think on something more creative, you know.
 Yeah, would you like to take a look on the last page?
 -> Yeah, sure
-<<set $backgroundCount to 6>>
+<<set $backgroundCount to 7>>
 It was your idea to draw this pages as a monster, remember. Here's your sketch.
 -> Yeah, I do. Heh, you reworked it so much.
 But the original idea is yours.
 -> Your page is very nice, I like it!
 Thanks!
-<<set $backgroundCount to 5>>
+<<set $backgroundCount to 6>>
 -> Hey, you know, I was reading about one movie.
     <<jump CourageNode>>
 -> Hey, you know I've got some work to do tomorrow. Let's chat again sometime.
@@ -473,11 +473,11 @@ title: NewDayNode
 position: 3125,-420
 ---
 <<set $spoonCount to 10>>
-<<set $backgroundCount to 7>>
+<<set $backgroundCount to 8>>
 Well, that's a brand new day.
 What should I do?
 -> Let's go and wash properly.
-    <<set $backgroundCount to 8>>
+    <<set $backgroundCount to 9>>
     I need to look well and proper today.
     <<set $spoonCount to $spoonCount-1>>
     Let's dress nicely.
@@ -486,7 +486,7 @@ What should I do?
     <<set $spoonCount to $spoonCount-1>>
     <<jump BusNode>>
 -> Let's brush teeth at least.
-    <<set $backgroundCount to 8>>
+    <<set $backgroundCount to 9>>
     Let's put on something.
     Hope it doesn't stink.
     It's fine. Let's go.
@@ -501,10 +501,10 @@ What should I do?
 title: BusNode
 position: 3398,-420
 ---
-<<set $backgroundCount to 9>>
+<<set $backgroundCount to 10>>
 Okay, here's my bus.
 That's fast, I'm lucky.
-<<set $backgroundCount to 10>>
+<<set $backgroundCount to 11>>
 I should be on time.
 I hope so, at least.
 -> Get your shit together
@@ -535,7 +535,7 @@ I hope so, at least.
     <<jump BossConversationNode>>
 -> Just watch the street passing by the window.
     -> Go to the rear window.
-        <<set $backgroundCount to 11>>
+        <<set $backgroundCount to 12>>
         Oh, really. Did they actually shit all over under them.
         <<set $characterCount to 4>>
         Oh, man, don't go there. Just don't go!
@@ -543,7 +543,7 @@ I hope so, at least.
         Oh, man. My life is not that shitty after all.
         <<jump StartWorkNode>>
     -> Go to the back of the bus.
-        <<set $backgroundCount to 12>>
+        <<set $backgroundCount to 13>>
         Why are they running away? What's going on?
         <<set $characterCount to 6>>
         O my god. Really? What the hell is wrong with him?
@@ -589,7 +589,7 @@ Let's try to divide it into smaller pieces.
 title: PanicNode
 position: 3946,-553
 ---
-<<set $backgroundCount to 13>>
+<<set $backgroundCount to 14>>
 I can't do it.
 <<set $spoonCount to $spoonCount-1>>
 I really can't.
@@ -632,7 +632,7 @@ position: 4104,-399
 Hi, Kiel! How are you doing? Is the report ready?
 -> Sure, Mr. Dandaleon. Let's discuss it.
 <<set $characterCount to 0>>
-<<set $backgroundCount to 14>>
+<<set $backgroundCount to 15>>
 Kiel presents his work.
 <<if $bossSuspicion == 1>>
     Presentation wasn't one hundred percent smooth.
@@ -652,7 +652,7 @@ Kiel presents his work.
     <<jump OnlyWorkEndNode>>
 <<endif>>
 It was good, it was really good.
-<<set $backgroundCount to 15>>
+<<set $backgroundCount to 16>>
 Mr. Dandaleon is happy with Kiel's report.
 It is such a responsobility, isn't it?
 <<set $spoonCount to $spoonCount - 1>>
@@ -671,7 +671,7 @@ Kiel's promotion is almost here, believe me!
 title: WorkMomEndNode
 position: 4408,-563
 ---
-<<set $backgroundCount to 16>>
+<<set $backgroundCount to 17>>
 Motivated to turn his life around, Kiel focuses on improving his performance at work. 
 He takes on new responsibilities, stays late to complete tasks, and becomes a valuable team member. 
 His hard work pays off when he is promoted to a higher position, earning a better salary and the admiration of his colleagues.
@@ -690,7 +690,7 @@ Play again?
 title: WorkGirlEndNode
 position: 4411,-427
 ---
-<<set $backgroundCount to 17>>
+<<set $backgroundCount to 18>>
 Determined to improve his life, Kiel dedicates himself to his work. He tackles new projects, puts in extra hours, and soon earns a promotion. 
 At the same time Kiel starts dating Millie.
 He supports her dreams in comics artist career and encourages her to pursue them relentlessly. 
@@ -706,7 +706,7 @@ Play again?
 title: OnlyWorkEndNode
 position: 4310,-208
 ---
-<<set $backgroundCount to 18>>
+<<set $backgroundCount to 19>>
 Driven by a desire for change, Kiel begins to dedicate himself to his work. 
 He puts in extra hours, takes on challenging projects, and quickly climbs the ranks. 
 His dedication does not go unnoticed, and he is soon promoted to a management position, earning a higher salary and the respect of his colleagues.
@@ -725,7 +725,7 @@ Play again?
 title: NoJobMomEndNode
 position: 4665,-490
 ---
-<<set $backgroundCount to 19>>
+<<set $backgroundCount to 20>>
 As Kiel's depression impacts his life, his work performance suffers. Despite trying to improve, he finds it increasingly difficult to stay focused and motivated. 
 One day, a significant mistake at the important task costs Kiel his job, leaving him devastated and unsure of his future.
 In his time of need, Kiel reaches out to his mother for support. She provides a comforting presence, offering him encouragement and guidance as he faces this challenging period. 
@@ -740,7 +740,7 @@ Play again?
 title: NothingEndNode
 position: 4660,-301
 ---
-<<set $backgroundCount to 20>>
+<<set $backgroundCount to 21>>
 As Kiel's depression takes a toll on his life, it begins to affect his performance at work.
 He struggles to stay focused and motivated, causing his productivity to decline.
 Despite his best efforts to improve, the weight of his depression proves to be too much to handle. 
