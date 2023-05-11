@@ -28,8 +28,7 @@ position: -249,-247
 
 I am Kiel, I suppose.
 I am at work sitting through my pants.
-Kiel is bored and devastated.
-Kiel has another 3 hours till going home, some not very urgent task to do.
+Me, Kiel has another 3 hours till going home, some not very urgent task to do.
 I am sick-sickening bored. It is exhausting just to look at me.
 Boss is coming! Kiel needs to make an impression of a hard worker!
 RIGHT NOW.
@@ -214,7 +213,7 @@ Will I?
 title: BushNode
 position: 1332,-437
 ---
-Beat around the bush around till the end of the working day.
+So I beat around the bush till the end of the working day.
 <<set $bushCount to 1>>
 <<jump GoHomeNode>>
 ===
@@ -332,11 +331,11 @@ It is a total disaster! Pralind is in a cult!
 -> How did you know that?
 His mother hired very famous private eye. Very expensive one, by the way, and he followed Pralind to his pilates classes.
 -> So, he was stalking Pralind, isn't he?
-No-no, he was INVESTIGATING, it is a completely different thing. Where did I stop, so, Praling is going to pilates classes?
--> So?
-SO?! You know these pilates teachers, they are all out of their mind! That's definetely a cult.
+No-no, he was INVESTIGATING, it is a completely different thing. Where did I stop, so, Praling is going to pilates classes.
+-> And?
+AND?! You know these pilates teachers, they are all out of their mind! That's definitely a cult.
 -> Yeah, I know.
-That's what I am talking about! It is a cult, it is definetely a cult!
+That's what I am talking about! It is a cult, it is definitely a cult!
 -> Aha.
 Poor Magdalena, such a horror to watch your child dragged into slavery. Pralind has no freedom anymore, he has to obey this despicable pilates leader to survive!
 -> Poor Magdalena.
