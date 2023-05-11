@@ -30,7 +30,7 @@ public class BackgroundManager : MonoBehaviour
 
     void setBackground()
     {
-        variableStorage.TryGetValue<float>("$sceneCount", out float sceneCount);
+        variableStorage.TryGetValue<float>("$backgroundCount", out float sceneCount);
         int backgroundCounter = (int)sceneCount;
         Debug.Log(backgroundCounter+"background counter");
         gameObject.GetComponent<Image>().sprite = backgrounds[backgroundCounter];
