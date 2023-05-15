@@ -2,7 +2,7 @@
 position: -249,-247
 ---
 <<declare $spoonCount to 0>>
-<<set $spoonCount to 10>>
+<<set $spoonCount to 6>>
 <<declare $sceneCount to 0>>
 <<set $sceneCount to 0>>
 <<declare $characterCount to 0>>
@@ -32,7 +32,8 @@ Me, Kiel has another 3 hours till going home, some not very urgent task to do.
 I am sick-sickening bored. It is exhausting just to look at me.
 Boss is coming! Kiel needs to make an impression of a hard worker!
 RIGHT NOW.
--> Don't blink and type some bullshit, button pusher. Busy people are constantly typing something.
+-> Don't blink and type some bullshit, button pusher. 
+    Busy people are constantly typing something.
     <<set $spoonCount to $spoonCount - 1>>
     <<set $embarassment to 1>>
 -> Put your hand under the chin. You're philosopher, Kiel, think!
@@ -42,7 +43,8 @@ RIGHT NOW.
     <<set $spoonCount to $spoonCount - 1>>
     <<set $embarassment to 1>>
 -> Just be yourself, nobody cares.
--> Do I need to do something, or do I not? Actually nobody expects me to finish that anyway.
+-> Do I need to do something, or do I not? 
+    Actually nobody expects me to finish that anyway.
     <<jump NoChillNode>>
 <<jump BossNode>>
 ===
@@ -166,6 +168,7 @@ position: 1762,41
 title: FocusNode
 position: 917,-394
 ---
+<<set $backgroundCount to 0>>
 Okay, let's try to focus on what we have here.
 Focus.
 F O C U S
@@ -531,7 +534,7 @@ I hope so, at least.
     AAAAAH.
     <<set $spoonCount to $spoonCount-1>>
     <<set $anxietyCount to $anxietyCount+1>>
-    <<jump BossConversationNode>>
+    <<jump StartWorkNode>>
 -> Just watch the street passing by the window.
     -> Go to the rear window.
         <<set $backgroundCount to 12>>
