@@ -33,8 +33,8 @@ public class QuestionScript : MonoBehaviour
                 var line = reader.ReadLine();
                 var values = line.Split(',');
 
-                questions.Add(values[0]);
-                answers.Add(new string[] { values[1], values[2], values[3] });
+                questions.Add(values[1]);
+                answers.Add(new string[] { values[2], values[3], values[4] });
             }
         }
     }
