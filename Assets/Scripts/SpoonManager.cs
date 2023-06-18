@@ -20,25 +20,24 @@ public class SpoonManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        bool test;
-        test = variableStorage.TryGetValue<float>("$spoonCount", out float spoonCount);
+        spoonCount = QuestionScript.spoonCount;
+        variableStorage.SetValue("$spoonCount",spoonCount);
         generateSpoons();
     }
     // Update is called once per frame
     void Update()
     {
-        variableStorage.TryGetValue("$spoonCount", out spoonCount);
         foreach (GameObject obj in spoons)
         {
             Destroy(obj);
         }
         spoons.Clear();
+        variableStorage.TryGetValue("$spoonCount", out spoonCount);
         generateSpoons();
     }
 
     void generateSpoons()
     {
-        variableStorage.TryGetValue("$spoonCount", out spoonCount);
         for (int i = 0; i < spoonCount; i++)
         {
             newSpoon = Instantiate(spoon, gameObject.transform);

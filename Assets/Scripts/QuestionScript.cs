@@ -3,12 +3,16 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class QuestionScript : MonoBehaviour
 {
     public TMP_Text question;
     public Button[] answerButtons;
     private int currentQuestionIndex = 0;
+    public static int spoonCount;
+    public int rawSpoonCount;
+    
 
     private List<string> questions = new List<string>();
     private List<string[]> answers = new List<string[]>();
@@ -33,8 +37,8 @@ public class QuestionScript : MonoBehaviour
                 var line = reader.ReadLine();
                 var values = line.Split(',');
 
-                questions.Add(values[0]);
-                answers.Add(new string[] { values[1], values[2], values[3] });
+                questions.Add(values[1]);
+                answers.Add(new string[] { values[2], values[3], values[4], values[5] });
             }
         }
     }
@@ -51,7 +55,21 @@ public class QuestionScript : MonoBehaviour
     void ButtonClicked(Button button)
     {
         Debug.Log("Clicked answer: " + button.GetComponentInChildren<TMP_Text>().text);
+
+        if (button.name == "Option 1")
+        {
+            rawSpoonCount += 3;
+        }
+        if (button.name == "Option 2")
+        {
+            rawSpoonCount += 2;
+        }
+        if (button.name == "Option 3")
+        {
+            rawSpoonCount += 1;
+        }
         currentQuestionIndex++;
+
         if (currentQuestionIndex < questions.Count)
         {
             LoadQuestion(currentQuestionIndex);
@@ -59,6 +77,17 @@ public class QuestionScript : MonoBehaviour
         else
         {
             Debug.Log("Questionnaire completed!");
+            if (rawSpoonCount > 40)
+            {
+                spoonCount = 3;
+            }
+            else
+            {
+                spoonCount = 12 - rawSpoonCount / 4;
+            }
+            print("Spoon count is " + spoonCount);
+            print("Raw Questionnaire Count is " + rawSpoonCount);
+            SceneManager.LoadScene("StartScreen");
             // Handle end of questionnaire here
         }
     }
