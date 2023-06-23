@@ -20,7 +20,8 @@ public class SpoonManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        spoonCount = QuestionScript.spoonCount;
+        //spoonCount = QuestionScript.spoonCount;
+        spoonCount = 10;
         variableStorage.SetValue("$spoonCount",spoonCount);
         generateSpoons();
     }
